@@ -30,6 +30,10 @@ protected:
 	int debug_level;
 	double twophase_derivsmoothing_xend;
 	double rho_smoothing_xend;
+	double hmin;
+	double hmax;
+	double pmin;
+	double pmax;
 	long fluidType;
 	double _p_eps   ; // relative tolerance margin for subcritical pressure conditions
 	double _delta_h ; // delta_h for one-phase/two-phase discrimination

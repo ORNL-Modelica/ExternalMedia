@@ -28,6 +28,11 @@ CoolPropSolver::CoolPropSolver(const std::string &mediumName, const std::string 
 	extend_twophase = true;
 	twophase_derivsmoothing_xend = 0;
 	rho_smoothing_xend = 0;
+	hmin = 0;
+	hmax = 0;
+	pmin = 0;
+	pmax = 0;
+	
 
 	// Initialise the saturation and near-critical variables
 	_p_eps   = 1e-3; // relative tolerance margin for subcritical pressure conditions
@@ -77,6 +82,38 @@ CoolPropSolver::CoolPropSolver(const std::string &mediumName, const std::string 
 					errorMessage((char*)format("I don't know how to handle this option [%s]",name_options[i].c_str()).c_str());
 					//throw NotImplementedError((char*)format("I don't know how to handle this option [%s]",name_options[i].c_str()).c_str());
 			}
+			//Added this to prevent regenerating the LUT tables
+			
+			else if (!param_val[0].compare("hmin"))
+			{
+				if (enable_BICUBIC)
+				{
+					hmin = strtod(param_val[1].c_str(),NULL);
+				}
+			}
+			else if (!param_val[0].compare("hmax"))
+			{
+				if (enable_BICUBIC)
+				{
+					hmax = strtod(param_val[1].c_str(),NULL);
+				}
+			}
+			else if (!param_val[0].compare("pmin"))
+			{
+				if (enable_BICUBIC)
+				{
+					pmin = strtod(param_val[1].c_str(),NULL);
+				}
+			}
+			else if (!param_val[0].compare("pmax"))
+			{
+				if (enable_BICUBIC)
+				{
+					pmax = strtod(param_val[1].c_str(),NULL);
+				}
+			}
+			
+			// End addition
 			else if (!param_val[0].compare("calc_transport"))
 			{
 				if (!param_val[1].compare("1") || !param_val[1].compare("true"))
@@ -178,6 +215,11 @@ void CoolPropSolver::preStateChange(void) {
 
 			if (enable_BICUBIC)
 			{
+				//Added this to prevent creating tables based on user input or maybe
+				if (hmin != 0 || hmax != 0 || pmin != 0 || pmax != 0)
+					state->set_TTSESinglePhase_LUT_range(hmin,hmax,pmin,pmax);
+					//errorMessage((char*)"Billy bob howdy");
+				// End addition
 				state->enable_TTSE_LUT();
 				state->pFluid->TTSESinglePhase.set_mode(TTSE_MODE_BICUBIC);
 			}
