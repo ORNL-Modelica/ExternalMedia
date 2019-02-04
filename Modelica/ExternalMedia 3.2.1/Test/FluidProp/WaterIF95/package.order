@@ -1,0 +1,8 @@
+TestStates
+TestStatesSat
+TestBasePropertiesExplicit
+TestBasePropertiesImplicit
+TestBasePropertiesDynamic
+CompareModelicaFluidProp_liquid
+CompareModelicaFluidProp_twophase
+CompareModelicaFluidProp_vapour
