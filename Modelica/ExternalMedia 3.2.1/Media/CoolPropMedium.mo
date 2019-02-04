@@ -67,12 +67,11 @@ package CoolPropMedium "Medium package accessing the CoolProp solver"
     sv := specificEntropy(setDewState(sat));
   end dewEntropy;
 
-  redeclare function surfaceTension
+  redeclare replaceable function surfaceTension
     extends Modelica.Icons.Function;
     input SaturationProperties sat "saturation property record";
     output SurfaceTension sigma "Surface tension sigma in the two phase region";
   algorithm
     assert(false, "The CoolProp solver does not provide surface tension");
   end surfaceTension;
-
 end CoolPropMedium;
