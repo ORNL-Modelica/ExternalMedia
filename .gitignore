@@ -21,3 +21,5 @@ dymosim.exp
 dymosim.lib
 Projects/build/
 *.bak-mo
+Projects/
+Modelica/ExternalMedia 3.2.1/Resources/Library/linux64/

@@ -27,7 +27,7 @@ SRCDIR     :=./Sources
 # LIBINST    =/usr/local/lib
 # HEADINST   =/usr/local/include
 # For relative path installation
-LIBINST     ="../Modelica/ExternalMedia $(FULLVERSION)/Resources/Library/linux32"
+LIBINST     ="../Modelica/ExternalMedia $(FULLVERSION)/Resources/Library/linux64"
 HEADINST    ="../Modelica/ExternalMedia $(FULLVERSION)/Resources/Include"
 #
 BINDIR     :=./build/LinuxGCC
