@@ -35,6 +35,18 @@ for /f "delims=" %%a in ('FINDSTR COOLPROP Sources\include.h') do (
 for /f "tokens=3" %%a in ("%line[0]%") do set COOLP=%%a
 echo " CoolProp support set to: %COOLP%"
 
+REM ********** CoolProp sources *********
+if "%COOLP%"=="1" (
+  REM echo "Sources in %CP%"
+  if exist "%CP%" (
+    pushd "%CP%"
+    git pull origin master
+    git submodule update --init
+    popd 
+  ) else (
+    git clone --recursive https://github.com/ibell/coolprop.git "%CP%"
+  )
+)
 
 REM echo "Compiling sources"
 REM ****** compile all the sources for OpenModelica ************

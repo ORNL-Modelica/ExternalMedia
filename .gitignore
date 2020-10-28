@@ -1,25 +1,20 @@
-*.mat
+externals/
+Projects/build/
+Modelica/ExternalMedia 3.2.1/Resources/Library/*/
 
+*.mat
+*.bak-mo
 *~
 
 buildlog.txt
-
 dsfinal.txt
-
 dsin.txt
-
 dslog.txt
 
 dsmodelext1.c
-
 dsmodel.c
 
 dymosim.exe
-
 dymosim.exp
-
 dymosim.lib
-Projects/build/
-*.bak-mo
-Projects/
-Modelica/ExternalMedia 3.2.1/Resources/Library/linux64/
+
