@@ -6,12 +6,12 @@ set TARGET=Dymola
 :: set TARGET=FMU
 
 REM CoolProp version < 5 is legacy
-set CP_REPO=Legacy
-:: set CP_REPO=Current
+:: set CP_REPO=Legacy
+set CP_REPO=Current
 
 REM choose master or version number
-set CP_VER=master
-:: set CP_VER=6.4.1
+:: set CP_VER=master
+set CP_VER=6.4.1
 
 call BuildLib-VS "Visual Studio 16 2019"
 

@@ -8,12 +8,12 @@ set TARGET=Dymola
 :: set TARGET=FMU
 
 REM CoolProp version < 5 is legacy
-set CP_REPO=Legacy
-:: set CP_REPO=Current
+:: set CP_REPO=Legacy
+set CP_REPO=Current
 
 REM choose master or version number
-set CP_VER=master
-:: set CP_VER=6.4.1
+:: set CP_VER=master
+set CP_VER=6.4.1
 
 call BuildLib-VS "Visual Studio 9 2008"
 
@@ -23,3 +23,4 @@ copy ExternalMediaLib.lib "..\Modelica\ExternalMedia 3.2.1\Resources\Library\win
 del ExternalMediaLib.lib
 copy Sources\externalmedialib.h "..\Modelica\ExternalMedia 3.2.1\Resources\Include"
 echo "All done"
+PAUSE
