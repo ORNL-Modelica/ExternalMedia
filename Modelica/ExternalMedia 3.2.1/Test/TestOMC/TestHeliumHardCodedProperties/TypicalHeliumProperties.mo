@@ -6,10 +6,9 @@ model TypicalHeliumProperties
   Medium.Temperature T;
   Medium.Temperature Tcrit=Medium.fluidConstants[1].criticalTemperature;
   Medium.AbsolutePressure p;
-  Modelica.SIunits.Density d;
+  Modelica.Units.SI.Density d;
   Medium.AbsolutePressure pcrit=Medium.fluidConstants[1].criticalPressure;
-  Modelica.SIunits.SpecificHeatCapacity cv=Medium.specificHeatCapacityCv(
-      state);
+  Modelica.Units.SI.SpecificHeatCapacity cv=Medium.specificHeatCapacityCv(state);
 equation
   T = 5;
   p = 5e5;

@@ -3,10 +3,10 @@ model incompressibleCoolPropMedium
                                    extends Modelica.Icons.Example;
 
 package DowQ_CP "DowthermQ properties from CoolProp"
-  extends ExternalMedia.Media.IncompressibleCoolPropMedium(
-  mediumName="DowQ",
-  substanceNames={"DowQ|calc_transport=1|debug=1000"},
-  ThermoStates=Modelica.Media.Interfaces.PartialMedium.Choices.IndependentVariables.pT);
+    extends ExternalMedia.Media.IncompressibleCoolPropMedium(
+      mediumName="DowQ",
+      substanceNames={"DowQ|calc_transport=1|debug=1000"},
+      ThermoStates=Modelica.Media.Interfaces.Choices.IndependentVariables.pT);
 end DowQ_CP;
 
 //replaceable package Fluid = ExternalMedia.Examples.WaterCoolProp (

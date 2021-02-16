@@ -7,12 +7,12 @@ package wf
     inputChoice=ExternalMedia.Common.InputChoice.hs);
 end wf;
   wf.BaseProperties fluid "Properties of the two-phase fluid";
-  Modelica.SIunits.SpecificEnthalpy h;
-  Modelica.SIunits.Pressure p;
-  Modelica.SIunits.SpecificEntropy s;
-  Modelica.SIunits.DerDensityByEnthalpy drdh
+  Modelica.Units.SI.SpecificEnthalpy h;
+  Modelica.Units.SI.Pressure p;
+  Modelica.Units.SI.SpecificEntropy s;
+  Modelica.Units.SI.DerDensityByEnthalpy drdh
     "Derivative of average density by enthalpy";
-  Modelica.SIunits.DerDensityByPressure drdp
+  Modelica.Units.SI.DerDensityByPressure drdp
     "Derivative of average density by pressure";
 equation
   //p = 1E5;

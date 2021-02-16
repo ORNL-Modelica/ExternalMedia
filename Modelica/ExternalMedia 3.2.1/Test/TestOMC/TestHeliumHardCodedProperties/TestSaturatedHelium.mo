@@ -5,8 +5,8 @@ model TestSaturatedHelium
   Medium.SaturationProperties sat;
   Medium.Temperature T;
   Medium.AbsolutePressure p;
-  Modelica.SIunits.Density dl;
-  Modelica.SIunits.Density dv;
+  Modelica.Units.SI.Density dl;
+  Modelica.Units.SI.Density dv;
 equation
   p = 1e5 + 1.27e5*time;
   sat = Medium.setSat_p(p);

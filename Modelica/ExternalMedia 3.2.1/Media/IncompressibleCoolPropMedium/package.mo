@@ -48,7 +48,7 @@ partial package IncompressibleCoolPropMedium "External incompressible medium wit
     //SaturationProperties sat "saturation property record";
   equation
     phaseInput = 1 "Force one-phase property computation";
-    R  = Modelica.Constants.small "Gas constant (of mixture if applicable)";
+  R_s = Modelica.Constants.small "Gas constant (of mixture if applicable)";
     MM = 0.001 "Molar mass (of mixture or single fluid)";
     if (basePropertiesInputChoice == InputChoiceIncompressible.phX or
         basePropertiesInputChoice == InputChoiceIncompressible.ph) then

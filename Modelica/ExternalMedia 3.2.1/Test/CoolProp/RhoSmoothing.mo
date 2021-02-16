@@ -18,16 +18,16 @@ end fluid_spl;
 fluid_std.ThermodynamicState state_std "Properties of the two-phase fluid";
 fluid_spl.ThermodynamicState state_spl "Properties of the two-phase fluid";
 
-Modelica.SIunits.AbsolutePressure p;
-Modelica.SIunits.SpecificEnthalpy h;
+  Modelica.Units.SI.AbsolutePressure p;
+  Modelica.Units.SI.SpecificEnthalpy h;
 
 fluid_std.SaturationProperties sat_std;
 
-Modelica.SIunits.SpecificEnthalpy h_start;
-Modelica.SIunits.SpecificEnthalpy h_end;
-Modelica.SIunits.SpecificEnthalpy h_delta;
+  Modelica.Units.SI.SpecificEnthalpy h_start;
+  Modelica.Units.SI.SpecificEnthalpy h_end;
+  Modelica.Units.SI.SpecificEnthalpy h_delta;
 
-Modelica.SIunits.Time t = 1;
+  Modelica.Units.SI.Time t=1;
 
 equation
   p = 10E5;

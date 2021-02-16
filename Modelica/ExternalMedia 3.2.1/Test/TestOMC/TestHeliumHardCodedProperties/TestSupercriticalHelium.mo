@@ -6,7 +6,7 @@ model TestSupercriticalHelium
   Medium.Temperature T;
   Medium.Temperature Tcrit=Medium.fluidConstants[1].criticalTemperature;
   Medium.AbsolutePressure p;
-  Modelica.SIunits.Density d;
+  Modelica.Units.SI.Density d;
   Medium.AbsolutePressure pcrit=Medium.fluidConstants[1].criticalPressure;
 equation
   T = 300 - 297.5*time;
