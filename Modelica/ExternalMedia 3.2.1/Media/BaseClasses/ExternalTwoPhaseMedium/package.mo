@@ -4,7 +4,9 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
     singleState = false,
     onePhase = false,
     smoothModel = false,
-    fluidConstants = {externalFluidConstants});
+    fluidConstants = {externalFluidConstants},
+    redeclare final record FluidConstants =
+        Modelica.Media.Interfaces.Types.TwoPhase.FluidConstants);
   import ExternalMedia.Common.InputChoice;
   // mediumName is declared here instead of in the extends clause
   // to break a circular dependency in redeclaration that OpenModelica
@@ -328,7 +330,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
   annotation (Inline = true);
   end density_ph;
 
-
   replaceable function density_ph_der "Total derivative of density_ph"
     extends Modelica.Icons.Function;
     input AbsolutePressure p "Pressure";
@@ -358,7 +359,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
     inverse(h=specificEnthalpy_pT(p=p, T=T, phase=phase)));
   end temperature_ph;
 
-
   replaceable function specificEntropy_ph
     "Return specific entropy from p and h"
     extends Modelica.Icons.Function;
@@ -374,8 +374,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
     inverse(h=specificEnthalpy_ps(p=p, s=s, phase=phase)));
   end specificEntropy_ph;
 
-
-
   redeclare replaceable function density_pT "Return density from p and T"
     extends Modelica.Icons.Function;
     input AbsolutePressure p "Pressure";
@@ -389,7 +387,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
     Inline=true,
     inverse(p=pressure_dT(d=d, T=T, phase=phase)));
   end density_pT;
-
 
   replaceable function density_pT_der "Total derivative of density_pT"
     extends Modelica.Icons.Function;
@@ -425,8 +422,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
   end specificEnthalpy_pT;
 
 
-
-
   redeclare replaceable function pressure_dT "Return pressure from d and T"
     extends Modelica.Icons.Function;
     input Density d "Density";
@@ -440,7 +435,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
     Inline=true,
     inverse(d=density_pT(p=p, T=T, phase=phase)));
   end pressure_dT;
-
 
   redeclare replaceable function specificEnthalpy_dT
     "Return specific enthalpy from d and T"
@@ -457,8 +451,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
   end specificEnthalpy_dT;
 
 
-
-
   redeclare replaceable function density_ps "Return density from p and s"
     extends Modelica.Icons.Function;
     input AbsolutePressure p "Pressure";
@@ -471,7 +463,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
   annotation (
     Inline=true);
   end density_ps;
-
 
   replaceable partial function density_ps_der "Total derivative of density_ps"
     extends Modelica.Icons.Function;
@@ -500,7 +491,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
     inverse(s=specificEntropy_pT(p=p, T=T, phase=phase)));
   end temperature_ps;
 
-
   redeclare replaceable function specificEnthalpy_ps
     "Return specific enthalpy from p and s"
     extends Modelica.Icons.Function;
@@ -515,8 +505,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
     Inline = true,
     inverse(s=specificEntropy_ph(p=p, h=h, phase=phase)));
   end specificEnthalpy_ps;
-
-
 
 
   replaceable function pressure_hs "Return pressure from h and s"
@@ -535,7 +523,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
         s=specificEntropy_ph(p=p, h=h, phase=phase)));
   end pressure_hs;
 
-
   replaceable function temperature_hs "Return temperature from h and s"
     extends Modelica.Icons.Function;
     input SpecificEnthalpy h "Specific enthalpy";
@@ -548,7 +535,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
     annotation (
       Inline = true);
   end temperature_hs;
-
 
   redeclare function extends prandtlNumber "Returns Prandtl number"
     /*  // If special definition in "C"
@@ -978,7 +964,6 @@ package ExternalTwoPhaseMedium "Generic external two phase medium package"
                LateInline = true,
                derivative = saturationPressure_der);
   end saturationPressure;
-
 
   redeclare function extends saturationPressure_sat
 
