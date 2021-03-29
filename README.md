@@ -2,6 +2,8 @@
 
 The `ExternalMedia` library provides a framework for interfacing external codes computing fluid properties to Modelica.Media-compatible component models.
 
+For a step-by-step video for this branch: https://youtu.be/o3u3mPDZ6YA
+
 ## Library description
 
 The ExternalMedia library provides a framework for interfacing external codes computing fluid properties to Modelica.Media-compatible component models.
