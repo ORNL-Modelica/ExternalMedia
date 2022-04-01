@@ -1,3 +1,13 @@
+# FORK SPECIFIC NOTES
+- To use this version of ExternalMedia switch to the appropriate branch. The `master` branch is not the correct branch to use.
+   1. Download/clone the repository
+   2. Change to the desired branch (not master).
+   3. Go to the `Projects` directory and double-click/run the `.bat` appropirate for your needs. This will clone, compile, and copy the required files to the appropriate place.
+       - Note: If exporting your model as an `FMU` you must change the `TARGET` in the selected `.bat.` file from `Dymola` to `FMU` and then rerun the `.bat` file. 
+       - Note you do not need to close/open Dymola when you perform that change. 
+- The `MSL4.0` branch works with the MSL 4.0 (surprise surprise).
+- Additional options on the `cp_support` branch for legacy coolprop have not been migrated to the `MSL4.0` branch. Take a look at the `Projects` folder to see if there are ways to make that correction.
+
 # ExternalMedia
 
 The `ExternalMedia` library provides a framework for interfacing external codes computing fluid properties to Modelica.Media-compatible component models.
