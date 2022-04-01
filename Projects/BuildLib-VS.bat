@@ -11,7 +11,13 @@ REM ~ /fp:fast :
 REM ~ /MD : Multi-threaded DLL runtime library
 REM ~ /Ehsc : Explicitly enable exception handling
 
-set C_OPTS=/Ox /c /MP3 /fp:fast /MD /EHsc
+if "%TARGET%"=="FMU" (
+  set LIB=/MT
+) else (
+  set LIB=/MD
+)
+
+set C_OPTS=/Ox /c /MP3 /fp:fast %LIB% /EHsc
 set CP=..\externals\coolprop\trunk
 set CPinc=%CP%\CoolProp
 set INCLUDES=-I%CPinc%

@@ -1,6 +1,10 @@
 REM ******** set the variables ************
 call "%VS2019INSTALLDIR%\VC\Auxiliary\Build\vcvars64.bat"
 
+REM Choose target of Dymola or FMU
+set TARGET=Dymola
+:: set TARGET=FMU
+
 call BuildLib-VS
 
 echo "Copying files to External Media 3.2.1"

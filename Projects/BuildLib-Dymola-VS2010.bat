@@ -3,6 +3,10 @@ REM call both to ensure that one works
 call "C:\Program Files\Microsoft Visual Studio 10.0\VC\vcvarsall.bat"
 call "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcvarsall.bat"
 
+REM Choose target of Dymola or FMU
+set TARGET=Dymola
+:: set TARGET=FMU
+
 call BuildLib-VS
 
 echo "Copying files to External Media 3.2.1"
