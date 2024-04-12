@@ -7,7 +7,12 @@
        - Note you do not need to close/open Dymola when you perform that change. 
 - The `MSL4.0` branch works with the MSL 4.0 (surprise surprise).
 - Additional options on the `cp_support` branch for legacy coolprop have not been migrated to the `MSL4.0` branch. Take a look at the `Projects` folder to see if there are ways to make that correction.
-  
+
+# Requirements - Windows
+- Install git for [Windows](https://git-scm.com/download/win).
+    - To test, open up a command window and type `git`
+- Visual Studio - Same version that is being used for the Modelica simulations.
+
 # ExternalMedia
 
 The `ExternalMedia` library provides a framework for interfacing external codes computing fluid properties to Modelica.Media-compatible component models.
